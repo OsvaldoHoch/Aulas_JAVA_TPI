@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Veterinaria</title>
+</head>
+<style>
+  body {
+    font-family: Verdana;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .dados {
+    border: 1px solid #d0d0d0;
+    padding: 20px 30px;
+    border-radius: 10px;
+  }
+</style>
+<body>
+  <div class="dados">
+    <h1>Dados da Clínica</h1>
+    <p>Nome da Veterinária: <strong th:text="${nomeVeterinario}"></strong></p>
+    <p>Especialização: <strong th:text="${especializacao}"></strong></p>
+    <p>Anos de Atuação: <strong th:text="${anosAtuacao}"></strong></p>
+    <p>Sexo: <strong th:text="${sexo}"></strong></p>
+    <p>Formação: <strong th:text="${formacao}"></strong></p>
+  </div>
+</body>
+</html>

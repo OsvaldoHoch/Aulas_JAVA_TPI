@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema para Cadastro de Eventos</title>
+    <style>
+        .formulario { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; }
+        .resultado { background: #e7f3fe; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<h2>Cadastrar Evento</h2>
+
+<form th:action="@{/salvar-evento}" method="post">
+    <div class="formulario">
+        <label>Data do Evento</label>
+        <input type="text" name="data" required placeholder="Ex.: 01/01/2001" />
+    </div>
+
+    <div class="formulario">
+        <label>Tipo de Ingresso</label>
+        <select name="categoria">
+            <option value="vip">Vip</option>
+            <option value="pista">Pista</option>
+            <option value="camarote">Camarote</option>
+        </select>
+    </div>
+
+    <div class="formulario">
+        <label>Quantidade de Pessoas</label>
+        <input type="number" name="quant" required />
+    </div>
+    <button type="submit">Cadastrar Produto</button>
+</form>
+
+<div th:if="${sucesso}" class="resultado">
+    <h3>Produtos cadastrados com sucesso</h3>
+    <p><strong>Nome do Produto:</strong> <span th:text="${n}"></span></p>
+    <p><strong>Preço Produto:</strong> R$ <span th:text="${p}"></span></p>
+    <p><strong>Categoria:</strong> <span th:text="${c}"></span></p>
+</div>
+
+</body>
+</html>
